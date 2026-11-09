@@ -1,0 +1,1 @@
+export const WHOLESALE_MINIMUM_ORDER = 25000;

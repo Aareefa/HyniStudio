@@ -1,0 +1,1054 @@
+
+.sale-strip {
+  background: var(--primary);
+  color: white;
+  padding: 8px 12px;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: .7px;
+  overflow: hidden;
+}
+
+.sale-strip span {
+  display: inline-block;
+  animation: saleMove 22s linear infinite;
+}
+
+@keyframes saleMove {
+  from { transform: translateX(45%); }
+  to { transform: translateX(-45%); }
+}
+
+.navbar {
+  min-height: 82px;
+  padding: 14px 4%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  background: var(--navbar-bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(16px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  white-space: nowrap;
+}
+
+.brand b {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 25px;
+}
+
+.nav-search {
+  display: flex;
+  flex: 1;
+  max-width: 390px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  overflow: hidden;
+  background: white;
+}
+
+.nav-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 16px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+
+.nav-search button {
+  padding: 0 15px;
+  border: 0;
+  background: var(--pink);
+  color: var(--primary);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-actions a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  position: relative;
+}
+
+.nav-actions svg {
+  width: 19px;
+}
+
+.nav-actions small {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 38px;
+  padding: 15px;
+  background: white;
+  border-bottom: 1px solid var(--border);
+}
+
+.main-nav a {
+  font-size: 14px;
+  transition: color .2s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--primary);
+}
+
+.mobile-menu-btn,
+.nav-backdrop {
+  display: none;
+}
+
+@media(max-width: 900px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .brand {
+    margin-right: auto;
+  }
+
+  .nav-search {
+    order: 3;
+    max-width: none;
+    flex-basis: 100%;
+  }
+
+  .nav-actions a span {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: grid;
+    place-items: center;
+    background: transparent;
+    border: 0;
+    color: var(--plum);
+  }
+
+  .main-nav {
+    display: none;
+    position: fixed;
+    z-index: 120;
+    right: 0;
+    top: 0;
+    width: min(320px, 85vw);
+    height: 100dvh;
+    padding: 90px 25px 30px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    box-shadow: var(--shadow);
+  }
+
+  .main-nav.nav-open {
+    display: flex;
+    animation: menuIn .3s ease both;
+  }
+
+  .main-nav a {
+    padding: 15px 5px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 110;
+    background: rgba(40, 27, 49, .48);
+    border: 0;
+  }
+}
+
+@keyframes menuIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media(max-width: 420px) {
+  .brand {
+    font-size: 17px;
+  }
+}
+
+/* =========================================
+   HYNl FASHION STUDIO — NAVBAR STYLES
+========================================= */
+
+:root {
+  --primary: #a56691;
+  --primary-dark: #34213d;
+  --accent: #d78faa;
+  --pink: #f7bfca;
+  --plum: #281b31;
+  --border: #e6cfd3;
+  --shadow: 0 12px 35px rgba(45, 32, 53, 0.12);
+  --navbar-bg: rgba(246, 235, 231, 0.97);
+  --text-main: #302438;
+  --text-muted: #756978;
+  --white: #fffcfa;
+}
+
+/* =========================================
+   SALE ANNOUNCEMENT
+========================================= */
+
+.sale-strip {
+  position: relative;
+  z-index: 102;
+  width: 100%;
+  overflow: hidden;
+  padding: 9px 12px;
+  background: var(--gradient);
+  color: var(--white);
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.sale-strip span {
+  display: inline-block;
+  white-space: nowrap;
+  animation: saleMove 24s linear infinite;
+}
+
+.sale-strip:hover span {
+  animation-play-state: paused;
+}
+
+@keyframes saleMove {
+  from {
+    transform: translateX(65%);
+  }
+
+  to {
+    transform: translateX(-65%);
+  }
+}
+
+/* =========================================
+   MAIN NAVBAR
+========================================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  min-height: 82px;
+  padding: 14px 4%;
+  background: var(--navbar-bg);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 4px 18px rgba(45, 32, 53, 0.06);
+}
+
+/* =========================================
+   BRAND LOGO
+========================================= */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 11px;
+  color: var(--plum);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 21px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.25s ease;
+}
+
+.brand:hover {
+  color: var(--primary);
+}
+
+.brand > span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.brand b {
+  display: block;
+  color: var(--text-muted);
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.brand-mark {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 5px 14px rgba(52, 33, 61, 0.18);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.brand:hover .brand-mark {
+  transform: rotate(-8deg) scale(1.05);
+  box-shadow: 0 8px 20px rgba(52, 33, 61, 0.24);
+}
+
+/* =========================================
+   SEARCH BAR
+========================================= */
+
+.nav-search {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 150px;
+  max-width: 390px;
+  height: 43px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: var(--white);
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.nav-search:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(165, 102, 145, 0.12);
+}
+
+.nav-search input {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: 11px 16px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.nav-search input::placeholder {
+  color: var(--text-soft);
+}
+
+.nav-search button {
+  display: grid;
+  place-items: center;
+  align-self: stretch;
+  min-width: 48px;
+  padding: 0 14px;
+  border: 0;
+  background: var(--pink);
+  color: var(--primary);
+  cursor: pointer;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease;
+}
+
+.nav-search button:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.nav-search button svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* =========================================
+   ACCOUNT, WISHLIST AND BAG
+========================================= */
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  gap: 12px;
+}
+
+/* Individual action links */
+
+.nav-actions a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 43px;
+  padding: 8px 11px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: var(--plum);
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav-actions a:hover {
+  transform: translateY(-2px);
+  border-color: var(--border);
+  background: var(--pink);
+  color: var(--primary);
+}
+
+.nav-actions a:focus-visible,
+.main-nav a:focus-visible,
+.brand:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+/* Account, heart and shopping bag icons */
+
+.nav-actions a > svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  stroke-width: 1.8;
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.nav-actions a:hover > svg {
+  transform: scale(1.1);
+  color: var(--primary);
+}
+
+/* Wishlist icon */
+
+.nav-actions a[href="/wishlist"] > svg {
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    fill 0.25s ease;
+}
+
+.nav-actions a[href="/wishlist"]:hover > svg {
+  fill: rgba(165, 102, 145, 0.12);
+}
+
+/* Shopping bag icon */
+
+.nav-actions a[href="/cart"]:hover > svg {
+  transform: translateY(-2px) rotate(-5deg);
+}
+
+/* Count badges for Wishlist and Bag */
+
+.nav-actions small {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border: 2px solid var(--navbar-bg);
+  border-radius: 50px;
+  background: var(--gradient);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 2px 6px rgba(40, 27, 49, .18);
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.nav-actions a:hover small {
+  transform: scale(1.08);
+  background: var(--primary-dark);
+}
+
+/* =========================================
+   SECONDARY NAVIGATION
+========================================= */
+
+.main-nav {
+  position: relative;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 38px;
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--white);
+}
+
+.main-nav a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  color: var(--text-main);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.main-nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--primary);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--primary);
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  transform: scaleX(1);
+}
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.mobile-menu-btn {
+  display: none;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--white);
+  color: var(--plum);
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.mobile-menu-btn:hover {
+  transform: scale(1.04);
+  background: var(--pink);
+  color: var(--primary);
+}
+
+.mobile-menu-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Hidden on desktop; shown when the menu is open on mobile */
+
+.nav-backdrop {
+  display: none;
+}
+
+/* =========================================
+   TABLET AND MOBILE
+========================================= */
+
+@media (max-width: 1100px) {
+  .navbar {
+    gap: 15px;
+    padding-right: 3%;
+    padding-left: 3%;
+  }
+
+  .brand {
+    font-size: 19px;
+  }
+
+  .brand b {
+    font-size: 9px;
+    letter-spacing: 1.6px;
+  }
+
+  .nav-actions {
+    gap: 5px;
+  }
+
+  .nav-actions a {
+    gap: 5px;
+    padding: 8px;
+  }
+
+  .nav-search {
+    max-width: 300px;
+  }
+
+  .main-nav {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 12px;
+    min-height: auto;
+    padding: 13px 4%;
+  }
+
+  .brand {
+    margin-right: auto;
+  }
+
+  .nav-actions {
+    order: 2;
+    gap: 5px;
+  }
+
+  .nav-actions a {
+    width: 42px;
+    height: 42px;
+    min-height: 42px;
+    padding: 8px;
+  }
+
+  .nav-actions a span {
+    display: none;
+  }
+
+  .nav-actions a > svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .nav-actions small {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 17px;
+    height: 17px;
+    padding: 0 4px;
+    font-size: 9px;
+  }
+
+  .mobile-menu-btn {
+    display: grid;
+    order: 3;
+  }
+
+  .nav-search {
+    order: 4;
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: none;
+  }
+
+  /* Mobile navigation drawer */
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 120;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    width: min(330px, 85vw);
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
+    padding: 88px 25px 30px;
+    border: 0;
+    background: var(--cream);
+    box-shadow: var(--shadow);
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(100%);
+    transition:
+      transform 0.3s ease,
+      visibility 0.3s ease;
+  }
+
+  .main-nav.nav-open {
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(0);
+  }
+
+  .main-nav a {
+    display: flex;
+    min-height: 50px;
+    padding: 15px 5px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+
+  .main-nav a::after {
+    display: none;
+  }
+
+  .main-nav a.active {
+    color: var(--primary);
+  }
+
+  .nav-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 110;
+    display: block;
+    background: rgba(40, 27, 49, 0.48);
+    border: 0;
+    cursor: pointer;
+    animation: backdropIn 0.25s ease both;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 520px) {
+  .sale-strip {
+    padding: 8px 10px;
+    font-size: 10px;
+    letter-spacing: 0.6px;
+  }
+
+  .navbar {
+    padding: 12px 4%;
+    column-gap: 7px;
+    row-gap: 11px;
+  }
+
+  .brand {
+    gap: 7px;
+    font-size: 16px;
+  }
+
+  .brand b {
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+
+  .brand-mark {
+    width: 36px;
+    height: 36px;
+  }
+
+  .nav-actions {
+    gap: 1px;
+  }
+
+  .nav-actions a {
+    width: 34px;
+    height: 38px;
+    min-height: 38px;
+    padding: 6px;
+    border-radius: 9px;
+  }
+
+  .nav-actions a > svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .nav-actions small {
+    top: 0;
+    right: -1px;
+    min-width: 15px;
+    height: 15px;
+    border-width: 1px;
+    font-size: 8px;
+  }
+
+  .mobile-menu-btn {
+    width: 36px;
+    height: 38px;
+  }
+
+  .mobile-menu-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .nav-search {
+    height: 40px;
+  }
+
+  .nav-search input {
+    padding: 9px 13px;
+    font-size: 12px;
+  }
+
+  .nav-search button {
+    min-width: 42px;
+    padding: 0 11px;
+  }
+
+  .main-nav {
+    width: min(300px, 88vw);
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand {
+    font-size: 14px;
+  }
+
+  .brand b {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .brand-mark {
+    width: 32px;
+    height: 32px;
+  }
+
+  .nav-actions a {
+    width: 30px;
+  }
+
+  .mobile-menu-btn {
+    width: 32px;
+  }
+}
+
+/* =========================================
+   ANIMATIONS AND ACCESSIBILITY
+========================================= */
+
+@keyframes backdropIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sale-strip span {
+    animation: none;
+  }
+
+  .brand,
+  .brand-mark,
+  .nav-search,
+  .nav-search button,
+  .nav-actions a,
+  .nav-actions svg,
+  .nav-actions small,
+  .main-nav a,
+  .main-nav,
+  .mobile-menu-btn {
+    transition: none;
+  }
+}
+
+.more-menu-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.more-menu-btn {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--plum);
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(45, 32, 53, .07);
+  transition: background .2s, color .2s, border-color .2s, box-shadow .2s;
+}
+
+.more-menu-btn:hover,
+.more-menu-btn[aria-expanded="true"] {
+  border-color: var(--border);
+  background: var(--pink);
+  color: var(--primary);
+  box-shadow: 0 5px 14px rgba(165, 102, 145, .16);
+}
+
+.more-menu-btn svg {
+  width: 21px;
+  height: 21px;
+  stroke-width: 2.2;
+  transition: transform .2s ease;
+}
+
+.more-menu-btn[aria-expanded="true"] svg {
+  transform: rotate(90deg);
+}
+
+.more-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 140;
+  display: grid;
+  width: min(230px, calc(100vw - 24px));
+  padding: 9px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background: rgba(255, 252, 250, .98);
+  box-shadow: 0 16px 38px rgba(45, 32, 53, .18);
+  animation: moreMenuIn .18s ease both;
+}
+
+.more-menu a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 11px;
+  border-radius: 8px;
+  color: var(--plum);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.more-menu a:hover,
+.more-menu a.active {
+  background: var(--pink);
+  color: var(--primary);
+}
+
+@keyframes moreMenuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 900px) {
+  .more-menu-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .more-menu {
+    right: 0;
+    width: min(250px, calc(100vw - 24px));
+  }
+}
+
+@media (max-width: 520px) {
+  .more-menu-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+  }
+
+  .more-menu-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .more-menu {
+    top: calc(100% + 8px);
+    right: -2px;
+    width: min(250px, calc(100vw - 20px));
+    padding: 8px;
+  }
+
+  .more-menu a {
+    min-height: 42px;
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .more-menu,
+  .more-menu-btn,
+  .more-menu-btn svg {
+    animation: none;
+    transition: none;
+  }
+}
